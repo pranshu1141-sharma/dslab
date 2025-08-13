@@ -1,9 +1,9 @@
 #include <iostream>
 using namespace std;
 
-const int MAX = 100; // Maximum size of array
-int arr[MAX];        // Array declaration
-int n = 0;           // Current number of elements
+const int MAX = 100; 
+int arr[MAX];        
+int n = 0;           
 
 // 1. Create Array
 void create() {
