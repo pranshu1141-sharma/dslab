@@ -4,8 +4,6 @@ using namespace std;
 const int MAX = 100; 
 int arr[MAX];        
 int n = 0;           
-
-// 1. Create Array
 void create() {
     cout << "Enter number of elements: ";
     cin >> n;
@@ -19,8 +17,6 @@ void create() {
     }
     cout << "Array created successfully.\n";
 }
-
-// 2. Display Array
 void display() {
     if (n == 0) {
         cout << "Array is empty.\n";
@@ -32,8 +28,6 @@ void display() {
     }
     cout << endl;
 }
-
-// 3. Insert Element
 void insert() {
     if (n >= MAX) {
         cout << "Array is full. Cannot insert.\n";
@@ -49,8 +43,6 @@ void insert() {
         cout << "Invalid position!\n";
         return;
     }
-
-    // Shift elements to the right
     for (int i = n; i > pos; i--) {
         arr[i] = arr[i - 1];
     }
@@ -58,8 +50,6 @@ void insert() {
     n++;
     cout << "Element inserted.\n";
 }
-
-// 4. Delete Element
 void deleteElement() {
     if (n == 0) {
         cout << "Array is empty.\n";
@@ -80,8 +70,6 @@ void deleteElement() {
     n--;
     cout << "Element deleted.\n";
 }
-
-// 5. Linear Search
 void linearSearch() {
     if (n == 0) {
         cout << "Array is empty.\n";
@@ -98,8 +86,6 @@ void linearSearch() {
     }
     cout << "Value not found in array.\n";
 }
-
-// Main Function
 int main() {
     int choice;
     do {
@@ -113,17 +99,28 @@ int main() {
         cout << "Enter your choice (1-6): ";
         cin >> choice;
 
-        switch (choice) {
-            case 1: create(); break;
-            case 2: display(); break;
-            case 3: insert(); break;
-            case 4: deleteElement(); break;
-            case 5: linearSearch(); break;
-            case 6: cout << "Exiting program.\n"; break;
-            default: cout << "Invalid choice! Try again.\n";
+     if (choice == 1) {
+    create();
+     }
+     else if (choice == 2) {
+    display();
+     }
+     else if (choice == 3) {
+    insert();
+    }
+    else if (choice == 4) {
+    deleteElement();
+    }
+   else if (choice == 5) {
+    linearSearch();
+   }
+   else if (choice == 6) {
+    cout << "Exiting program.\n";
+   }
+    else {
+    cout << "Invalid choice! Try again.\n";
+}
         }
-
-    } while (choice != 6);
-
+     while (choice != 6);
     return 0;
 }
