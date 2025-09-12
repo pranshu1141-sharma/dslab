@@ -24,7 +24,7 @@ class Criclequeue{
         cout<<"Enqueue: "<<val<<endl;
     }
     void dequeue(){
-    if(isFull()){
+    if(isEmpty()){
         cout<<"Underflow";
         return;
     }
