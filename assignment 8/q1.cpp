@@ -13,7 +13,6 @@ class BinaryTree {
 public:
     BinaryTree() { root = nullptr; }
     
-    // Create a new node
     Node* createNode(int data) {
         Node* newNode = new Node();
         newNode->data = data;
@@ -22,7 +21,6 @@ public:
         return newNode;
     }
     
-    // Insert node in binary tree
     Node* insert(Node* node, int data) {
         if (node == nullptr) {
             return createNode(data);
@@ -35,35 +33,32 @@ public:
         }
         return node;
     }
-    
-    // a. Pre-order Traversal: Root -> Left -> Right
+
     void preOrder(Node* node) {
         if (node == nullptr) return;
         
-        cout << node->data << " ";           // Visit root
-        preOrder(node->left);                // Traverse left subtree
-        preOrder(node->right);               // Traverse right subtree
+        cout << node->data << " ";           
+        preOrder(node->left);                
+        preOrder(node->right);              
     }
     
-    // b. In-order Traversal: Left -> Root -> Right
     void inOrder(Node* node) {
         if (node == nullptr) return;
         
-        inOrder(node->left);                 // Traverse left subtree
-        cout << node->data << " ";           // Visit root
-        inOrder(node->right);                // Traverse right subtree
+        inOrder(node->left);                 
+        cout << node->data << " ";         
+        inOrder(node->right);          
     }
     
-    // c. Post-order Traversal: Left -> Right -> Root
+   
     void postOrder(Node* node) {
         if (node == nullptr) return;
         
-        postOrder(node->left);               // Traverse left subtree
-        postOrder(node->right);              // Traverse right subtree
-        cout << node->data << " ";           // Visit root
+        postOrder(node->left);           
+        postOrder(node->right);              
+        cout << node->data << " ";           
     }
-    
-    // Public wrapper functions
+  
     void insertValue(int data) {
         root = insert(root, data);
     }
@@ -91,7 +86,6 @@ int main() {
     BinaryTree bt;
     int choice, value;
     
-    // Build a sample tree: 50, 30, 70, 20, 40, 60, 80
     cout << "Building Binary Tree with values: 50, 30, 70, 20, 40, 60, 80\n";
     bt.insertValue(50);
     bt.insertValue(30);
