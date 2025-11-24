@@ -69,7 +69,6 @@ class BST {
             }
             
             else {
-                // Find in-order successor (minimum in right subtree)
                 Node* temp = findMin(node->right);
                 node->data = temp->data;
                 node->right = deleteNode(node->right, temp->data);
@@ -198,3 +197,4 @@ int main() {
     
     return 0;
 }
+
